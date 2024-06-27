@@ -5,7 +5,8 @@ const staticRoute= require("./routes/staticRouter")
 const urlroutes = require("./routes/url")
 const userRoute = require("./routes/user")
 const URL = require("./models/url")
-const {restrictToLoggedInUserOnly} =require("./middlewares/auth")
+const {restrictToLoggedInUserOnly,checkAuth} =require("./middlewares/auth")
+
 const app=  express();
  
 connectToMongoDb("mongodb://127.0.0.1:27017/shorterurls").then(()=>{
@@ -23,7 +24,7 @@ app.use(cookieparser());
 
 app.use("/url",restrictToLoggedInUserOnly, urlroutes);
 app.use("/user",userRoute);
-app.use("/",staticRoute);
+app.use("/",checkAuth,staticRoute);
 
 
 // app.get("/:shortId",async (req,res)=>{
