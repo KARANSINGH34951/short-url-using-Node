@@ -18,7 +18,7 @@ URL Shortener is a web application that allows users to shorten long URLs for ea
 
 1. **Clone the repository:**
     ```bash
-    git clone [https://github.com/yourusername/url-shortener.git](https://github.com/KARANSINGH34951/short-url-using-Node)
+    git clone https://github.com/KARANSINGH34951/short-url-using-Node
     ```
 2. **Navigate to the project directory:**
     ```bash
